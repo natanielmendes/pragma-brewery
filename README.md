@@ -90,10 +90,10 @@ Ran all test suites.
 ### How will beers be added to a truck in version 2.0?
 * *Beer boxes* will contain *beers* from only one type. So, *beer boxes* will have a temperature and will be added to a truck
 
-### Why temperature is on beers and not in beer boxes in version 2.0?
-* This experimental version does not need all complexity regarding *beer boxes* and *trucks* as we don't have a database to relate our entities yet
+### Why is temperature on beers and not in beer boxes in this version?
+* This experimental version does not need all complexity regarding *beer boxes* and *trucks* as we don't have a database to relate our entities yet. Beer boxes (containers) and trucks will be realeased in version 2.0
 
-### How can I change the port which web-server runs
+### How can I change the port which web-server runs?
 * In version 2.0 here will be a config folder under api folder with database and API connection configuration. However, for this version just replace 3000 from **index.js** file or run the server using the command below (3001 as chosen port):
 ```
 APP_PORT=3001 npm start
