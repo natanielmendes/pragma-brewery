@@ -87,18 +87,23 @@ Ran all test suites.
 * GET /beer-box/:beerBoxId
 
 ## FAQ
-### How will beers be added to a truck?
+### How will beers be added to a truck in version 2.0?
 * *Beer boxes* will contain *beers* from only one type. So, *beer boxes* will have a temperature and will be added to a truck
 
-### Why temperature is on beers and not in beer boxes?
+### Why temperature is on beers and not in beer boxes in version 2.0?
 * This experimental version does not need all complexity regarding *beer boxes* and *trucks* as we don't have a database to relate our entities yet
 
+### How can I change the port which web-server runs
+* In version 2.0 here will be a config folder under api folder with database and API connection configuration. However, for this version just replace 3000 from **index.js** file or run the server using the command below (3001 as chosen port):
+```
+APP_PORT=3001 npm start
+```
 
 ## Built With
 
 * [Node.js](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine.
 * [express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+* [jest](https://jestjs.io/) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
 
 ## Authors
-
 * **Nataniel Carvalho** - (https://github.com/natanielmendes)
