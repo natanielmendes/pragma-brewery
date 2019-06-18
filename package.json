@@ -1,12 +1,14 @@
 {
   "name": "pragma-brewery",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node ./api/src/index.js",
+    "shell": "node ./api/src/shellExec.js",
     "test": "jest"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "fs": "^0.0.1-security"
   },
   "devDependencies": {

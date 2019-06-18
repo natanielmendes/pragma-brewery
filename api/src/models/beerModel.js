@@ -2,18 +2,17 @@ class Beer {
     constructor (data) {
         this.id = data.id
         this.type = data.type
-        this.min = data.min
-        this.max = data.max
+        this.minTemp = data.minTemp
+        this.maxTemp = data.maxTemp
     }
     isHighOrLow (temperature) {
-        if (temperature > this.max) {
+        if (temperature > this.maxTemp) {
             return 'high'
         }
-        if (temperature < this.min) {
+        if (temperature < this.minTemp) {
             return 'low'
         }
         return false
     }
 }
-
 module.exports = Beer

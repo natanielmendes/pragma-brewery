@@ -1,43 +1,104 @@
 # Pragma Brewery NodeJS Backend
+This project was designed to have a backend generating random temperatures as no sensors exist to update temperatures for each truck in a database for this alpha (0.0.1) version.
 
-This project was designed to have only a backend which generates random temperatures as no sensors exist at this time to update temperatures for each truck in a database for this alpha version.
+## Getting Started
 
-## To Run
-### Install the dependencies
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-#### NPM V6.9.0
+### Prerequisites
+
+What things you need to install the software and how to install them
+
+```
+node v8.11.4 or higher
+```
+
+### Install the dependencies (NPM or YARN)
+
+#### NPM V6.4.0 or higher
+
 ```
 npm install
 ```
-#### YARN V1.6.0
+
+#### YARN V1.6.0 or higher
+
 ```
 yarn
 ```
 
-### Run locally
-
-It is possible to run the backend layer in two ways: 
-
-The first is a simple `log` system that prints the current temperature of the beers on the console. You can run this system with the command below:
-
+## Run project
+### Run as one-liner script
+```
+npm run-script shell
+```
+### Run as web-server
 ```
 npm start
 ```
 
-### Upcoming features in version 2 (next version)
+## Test project
+#### NPM V6.9.0 or higher
+```
+npm test
+```
+#### YARN V1.6.0 or higher
+```
+yarn run test
+```
 
-- /api root folder with contents from src and routes to following resources:
-    ### Add truck with relevant information
-    -> POST /truck
-    ### Add beer to truck
-    -> POST /truck/:truckId/beer/
-    ### Add new beer with information
-    -> POST /beer/
-    ### Update temperature regarding beer in the truck
-    -> POST /truck/:truckId/beer/:beerId/temperature
-    ### Get all beers from truck id
-    -> GET /truck/:truckId/beers
-    ### Get beer information
-    -> GET /beers/:beerId
+## Current features in alpha version
+### Get all beers current temperature
+* GET http://localhost:3000/beers (**have fun** pasting it in browser while web-server mode is running)
 
-- /src/util/RandomTemperature.js needs to be removed as it only currently exists to replace data which should be modeled in a database with trucks, beer boxes, beers and so on.
+## Test case results for Pragma Brewery project
+```
+> pragma-brewery@0.0.1 test /home/nataniel/Projects/pragma-brewery
+> jest
+
+ PASS  test/beer-constraint-validations.test.js
+  ✓ Empty beers array list warning (6ms)
+  ✓ Empty beers string list warning
+  ✓ Null beers string list warning (1ms)
+  ✓ Empty string as temperature generator (1ms)
+  ✓ Null temperature generator warning (1ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        1.247s
+Ran all test suites.
+```
+
+## Upcoming features in version 2 (next version)
+### Add truck with relevant information
+* POST /truck
+### Add truck with relevant information
+* POST /beer-box
+### Add beer box to truck
+* POST /truck/:truckId/beer-box/
+### Add new beer box with information (such as temperature and bottle quantity)
+* POST /beer-box/
+### Update beer box temperature 
+* PUT /beer-box/:beerBoxId
+### Get all information from truck (such as bottle boxes currently carried on it)
+* GET /truck/:truckId/
+### Get beer box information
+* GET /beer-box/:beerBoxId
+
+## FAQ
+### How will beers be added to a truck?
+* *Beer boxes* will contain *beers* from only one type. So, *beer boxes* will have a temperature and will be added to a truck
+
+### Why temperature is on beers and not in beer boxes?
+* This experimental version does not need all complexity regarding *beer boxes* and *trucks* as we don't have a database to relate our entities yet
+
+
+## Built With
+
+* [Node.js](https://nodejs.org/en/) - JavaScript runtime built on Chrome's V8 JavaScript engine.
+* [express](https://expressjs.com/) - Fast, unopinionated, minimalist web framework for Node.js
+
+## Authors
+
+* **Nataniel Carvalho** - (https://github.com/natanielmendes)

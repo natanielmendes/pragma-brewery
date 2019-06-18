@@ -1,11 +1,23 @@
-let beerController = require('./../src/controllers/BeerController')
+let beerController = require('../api/src/controllers/beerController')
 
 console.warn = jest.fn()
 
-test('Empty beers list warning', () => {
-    expect(beerController.init([], {}).run()).toBe('Beer list is empty!')
+test('Empty beers array list warning', () => {
+    expect(beerController.build([], {})).toBe('Empty beers list')
 })
 
-test('Temperatures not sent', () => {
-    expect(() => beerController.init([], null).run()).toThrow()
+test('Empty beers string list warning', () => {
+    expect(beerController.build('', {})).toBe('Empty beers list')
+})
+
+test('Null beers string list warning', () => {
+    expect(beerController.build('', {})).toBe('Empty beers list')
+})
+
+test('Empty string as temperature generator', () => {
+    expect(() => beerController.build([], '').statusStrings()).toThrow()
+})
+
+test('Null temperature generator warning', () => {
+    expect(() => beerController.build([], null).statusStrings()).toThrow()
 })
