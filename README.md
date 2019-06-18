@@ -94,7 +94,7 @@ Ran all test suites.
 * This experimental version does not need all complexity regarding *beer boxes* and *trucks* as we don't have a database to relate our entities yet. Beer boxes (containers) and trucks will be realeased in version 2.0
 
 ### How can I change the port which web-server runs?
-* In version 2.0 here will be a config folder under api folder with database and API connection configuration. However, for this version just replace 3000 from **index.js** file or run the server using the command below (3001 as chosen port):
+* In version 2.0 there will be a config folder under api folder with database and API connection configuration. However, for this version just replace the 3000 value in **index.js** file before running web-server mode or run the server using the command below (3001 as chosen port):
 ```
 APP_PORT=3001 npm start
 ```
