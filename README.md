@@ -48,7 +48,7 @@ yarn run test
 ```
 
 ## Current features in alpha version
-### Get all beers current temperature
+### Get all beers information with current **temperature**
 * GET http://localhost:3000/beers (**have fun** pasting it in browser while web-server mode is running)
 
 ## Test case results for Pragma Brewery project
@@ -73,7 +73,7 @@ Ran all test suites.
 ## Upcoming features in version 2 (next version)
 ### Add truck with relevant information
 * POST /truck
-### Add truck with relevant information
+### Add beer box (container) with relevant information
 * POST /beer-box
 ### Add beer box to truck
 * POST /truck/:truckId/beer-box/
